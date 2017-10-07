@@ -5,7 +5,7 @@ import AddonsList from './cart/AddonsList';
 const Cart = () =>
 {
     return (
-        <div class="container">
+        <div className="container">
             <h1>Your Cart</h1>
             <ItemTable />
             <h2>Add-ons</h2>
@@ -13,22 +13,22 @@ const Cart = () =>
             <div>
                 <AddonsList />
 
-                <div class="row">
+                <div className="row">
 
-                    <div class="col">
+                    <div className="col">
                         <h2>Message</h2>
 
-                        <div class="form-group">
-                            <label for="messageTextarea">Enter the message (max 150 characters)</label>
-                            <textarea class="form-control" id="messageTextarea" rows="3" maxlength="150"></textarea>
+                        <div className="form-group">
+                            <label htmlFor="messageTextarea">Enter the message (max 150 characters)</label>
+                            <textarea className="form-control" id="messageTextarea" rows="3" maxLength="150"></textarea>
                         </div>
 
                     </div>
 
-                    <div class="col">
+                    <div className="col">
                         <h2>Cart Totals</h2>
 
-                        <table class="table cartTotal-table">
+                        <table className="table cartTotal-table">
                             <tbody>
                             <tr>
                                 <th scope="row">Total</th>
@@ -37,7 +37,7 @@ const Cart = () =>
                             </tbody>
                         </table>
 
-                        <button type="button" class="btn btn-success btn-lg btn-block">Proceed to checkout</button>
+                        <button type="button" className="btn btn-success btn-lg btn-block">Proceed to checkout</button>
 
                     </div>
 

@@ -222,3 +222,15 @@ table.cartTotal-table tr{
     text-align: center;
     background-color: #e6e6e6;
 }
+
+/* Cart Side Bar */
+.cart-sidebar{
+    left:75%;
+    bottom:0%;
+    position: fixed;
+    height: auto;
+    overflow: auto;
+    z-index: 1;
+    background-color: #f2f2f2;
+    border-top: 2px black;
+}

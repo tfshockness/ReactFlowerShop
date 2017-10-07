@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ItemTable = () => (
-    <table class="table yourCart-table">
+    <table className="table yourCart-table">
 
                 <thead>
                     <tr>
@@ -19,7 +19,7 @@ const ItemTable = () => (
                         <td>
                             <img 
                                 src="https://demo.woothemes.com/storefront/wp-content/plugins/woocommerce/assets/images/placeholder.png"
-                                alt="product image" 
+                                alt="product representation" 
                                 width="80" 
                             />
                         </td>
@@ -30,13 +30,12 @@ const ItemTable = () => (
                                 name="quantity"
                                 min="1" 
                                 max="100" 
-                                step="1" 
-                                value="1" 
+                                step="1"
                             />
                         </td>
                         <td>$39.99</td>
                         <td>
-                            <button type="button" class="btn btn-outline-danger btn-sm btn-table-cancel">x</button>
+                            <button type="button" className="btn btn-outline-danger btn-sm btn-table-cancel">x</button>
                         </td>
                     </tr>
                         
@@ -44,7 +43,7 @@ const ItemTable = () => (
                     <td>
                         <img 
                             src="https://demo.woothemes.com/storefront/wp-content/plugins/woocommerce/assets/images/placeholder.png"
-                            alt="product image" 
+                            alt="product representation" 
                             width="80"
                         />
                     </td>
@@ -57,13 +56,12 @@ const ItemTable = () => (
                             min="1" 
                             max="100" 
                             step="1" 
-                            value="1"
                         />
                     </td>
 
                     <td>$35.99</td>
                     <td>
-                        <button type="button" class="btn btn-outline-danger btn-sm btn-table-cancel">x</button>
+                        <button type="button" className="btn btn-outline-danger btn-sm btn-table-cancel">x</button>
                     </td>
                 </tr>
                         

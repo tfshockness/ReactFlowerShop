@@ -6,7 +6,7 @@ const Product = () =>
         <div>
             <div className="col-md-12 text-center">
                 <a href="{{ url('shop', $product->slug) }}">
-                    <img src={placeholder} alt="product image" height="300" width="230" />
+                    <img src={placeholder} alt="product representation" height="300" width="230" />
                 </a>
                 
                 <div className="text-center">

@@ -1,4 +1,4 @@
-const flowers = [
+export const flowers = [
     {
         id: 1,
         name: "1",
@@ -109,7 +109,7 @@ const flowers = [
     }
 ];
 
-const addons = [
+export const addons = [
     {
         id:1,
         name: "Teddy Bear",
@@ -139,3 +139,8 @@ const addons = [
         quantity: 0
     }
 ];
+
+export const cart = {
+    products: [],
+    total: 0
+}

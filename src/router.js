@@ -3,7 +3,8 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Nav from './components/layout/Nav';
 import Footer from './components/layout/Footer';
 import Home from './components/shop/Home';
-import Categories from './components/shop/Categories'
+import Categories from './components/shop/Categories';
+import CartSidebar from './components/layout/CartSidebar';
 import Cart from './components/shop/Cart';
 import NotFound from './components/NotFound';
 
@@ -12,6 +13,7 @@ const Routes = () => {
         <BrowserRouter>
             <div>
                 <Nav />
+                <CartSidebar />
                 <Switch>
                     <Route exact path="/" component={ Home } />
                     <Route path="/categories" component={ Categories } />
