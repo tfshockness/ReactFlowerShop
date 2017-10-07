@@ -21,7 +21,7 @@ export const flowers = [
         id: 3,
         name: "Graceful Beauty",
         description: "Beautiful flower",
-        price: 5000,
+        price: 2500,
         img: "3.jpg",
         category: "Bouquets",
         quantity: 0
@@ -57,7 +57,7 @@ export const flowers = [
         id: 7,
         name: "Bright Day",
         description: "Beautiful flower",
-        price: 5000,
+        price: 3000,
         img: "7.jpg",
         category: "Bouquets",
         quantity: 0
@@ -146,19 +146,19 @@ export const cart = {
             id: 3,
             name: "Graceful Beauty",
             description: "Beautiful flower",
-            price: 5000,
+            price: 2500,
             img: "3.jpg",
             category: "Bouquets",
-            quantity: 0
+            quantity: 1
         },
         {
             id: 7,
             name: "Bright Day",
             description: "Beautiful flower",
-            price: 5000,
+            price: 3000,
             img: "7.jpg",
             category: "Bouquets",
-            quantity: 0
+            quantity: 2
         }
     ],
     total: 0

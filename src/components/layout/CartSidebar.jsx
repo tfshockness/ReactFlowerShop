@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import ProductTableRowSidebar from './ProductTableRowSidebar';
 
-export default class CartSideBar extends Component
+
+class CartSideBar extends Component
 {
     constructor(props)
     {
@@ -32,54 +35,7 @@ export default class CartSideBar extends Component
                         </thead>
 
                         <tbody>
-
-                            <tr>
-                                <td>
-                                    <img 
-                                        src="https://demo.woothemes.com/storefront/wp-content/plugins/woocommerce/assets/images/placeholder.png"
-                                        alt="product representation"
-                                        width="80" 
-                                    />
-                                </td>
-                                <td>
-                                    <input 
-                                        type="number" 
-                                        name="quantity"
-                                        min="1" 
-                                        max="100" 
-                                        step="1"
-                                    />
-                                </td>
-                                <td>$39.99</td>
-                                <td>
-                                    <button type="button" className="btn btn-outline-danger btn-sm btn-table-cancel">x</button>
-                                </td>
-                            </tr>
-                                
-                        <tr>
-                            <td>
-                                <img 
-                                    src="https://demo.woothemes.com/storefront/wp-content/plugins/woocommerce/assets/images/placeholder.png"
-                                    alt="product representation"
-                                    width="80"
-                                />
-                            </td>
-                            <td>
-                                <input 
-                                    type="number" 
-                                    name="quantity"
-                                    min="1" 
-                                    max="100" 
-                                    step="1"
-                                />
-                            </td>
-
-                            <td>$35.99</td>
-                            <td>
-                                <button type="button" className="btn btn-outline-danger btn-sm btn-table-cancel">x</button>
-                            </td>
-                        </tr>
-                                
+                            { this.props.items.map((item) => <ProductTableRowSidebar key={item.id} {...item} /> )}    
                         </tbody>
                      </table>
 
@@ -103,3 +59,12 @@ export default class CartSideBar extends Component
         )
     }
 }
+
+const mapStateToProps = (state) =>
+{
+    return {
+        items: state.cart.products
+    }
+}
+
+export default connect(mapStateToProps)(CartSideBar);
