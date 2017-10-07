@@ -7,8 +7,8 @@ const ItemTable = () => (
                     <tr>
                         <th>ITEM</th>
                         <th></th>
-                        <th>QTY</th>
-                        <th>SUBTOTAL</th>
+                        <th>QTD</th>
+                        <th>PRICE</th>
                         <th></th>
                     </tr>
                 </thead>

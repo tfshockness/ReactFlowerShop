@@ -1,8 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Jumbotron from './home/Jumbotron'
 import Product from './shared/Product';
 
-const Home = () =>
+const Home = (props) =>
 {
     return (
         <div>
@@ -10,14 +11,7 @@ const Home = () =>
             <div className="container">
                 <section>
                     <div className="row">
-                        <Product />
-                        <Product />
-                        <Product />
-                        <Product />
-                        <Product />
-                        <Product />
-                        <Product />
-                        <Product />
+                    { props.products.map((product) => <Product key={product.id} {...product} /> )}
                     </div>
                 </section>
             </div>
@@ -25,4 +19,11 @@ const Home = () =>
     );
 }
 
-export default Home;
+const mapStateToProps = (state) =>
+{
+    return {
+        products: state.products
+    }
+}
+
+export default connect(mapStateToProps)(Home);

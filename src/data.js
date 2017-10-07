@@ -1,7 +1,7 @@
 export const flowers = [
     {
         id: 1,
-        name: "1",
+        name: "Brighten Your Day",
         description: "Beautiful flower",
         price: 5000,
         img: "1.jpg",
@@ -10,7 +10,7 @@ export const flowers = [
     },
     {
         id: 2,
-        name: "1",
+        name: "Peaceful Arrangement",
         description: "Beautiful flower",
         price: 5000,
         img: "2.jpg",
@@ -19,7 +19,7 @@ export const flowers = [
     },
     {
         id: 3,
-        name: "1",
+        name: "Graceful Beauty",
         description: "Beautiful flower",
         price: 5000,
         img: "3.jpg",
@@ -28,7 +28,7 @@ export const flowers = [
     },
     {
         id: 4,
-        name: "1",
+        name: "Sun Shine",
         description: "Beautiful flower",
         price: 5000,
         img: "4.jpg",
@@ -37,7 +37,7 @@ export const flowers = [
     },
     {
         id: 5,
-        name: "1",
+        name: "Delight",
         description: "Beautiful flower",
         price: 5000,
         img: "5.jpg",
@@ -46,7 +46,7 @@ export const flowers = [
     },
     {
         id: 6,
-        name: "1",
+        name: "Elegance",
         description: "Beautiful flower",
         price: 5000,
         img: "6.jpg",
@@ -55,7 +55,7 @@ export const flowers = [
     },
     {
         id: 7,
-        name: "1",
+        name: "Bright Day",
         description: "Beautiful flower",
         price: 5000,
         img: "7.jpg",
@@ -64,7 +64,7 @@ export const flowers = [
     },
     {
         id: 8,
-        name: "1",
+        name: "You are Special",
         description: "Beautiful flower",
         price: 5000,
         img: "8.jpg",
@@ -73,7 +73,7 @@ export const flowers = [
     },
     {
         id: 9,
-        name: "1",
+        name: "So much Love",
         description: "Beautiful flower",
         price: 5000,
         img: "9.jpg",
@@ -82,7 +82,7 @@ export const flowers = [
     },
     {
         id: 10,
-        name: "1",
+        name: "White Delight",
         description: "Beautiful flower",
         price: 5000,
         img: "10.jpg",
@@ -91,7 +91,7 @@ export const flowers = [
     },
     {
         id: 11,
-        name: "1",
+        name: "Richness",
         description: "Beautiful flower",
         price: 5000,
         img: "11.jpg",
@@ -100,7 +100,7 @@ export const flowers = [
     },
     {
         id: 12,
-        name: "1",
+        name: "Wonderful Greatness",
         description: "Beautiful flower",
         price: 5000,
         img: "12.jpg",
@@ -141,6 +141,25 @@ export const addons = [
 ];
 
 export const cart = {
-    products: [],
+    products: [
+        {
+            id: 3,
+            name: "Graceful Beauty",
+            description: "Beautiful flower",
+            price: 5000,
+            img: "3.jpg",
+            category: "Bouquets",
+            quantity: 0
+        },
+        {
+            id: 7,
+            name: "Bright Day",
+            description: "Beautiful flower",
+            price: 5000,
+            img: "7.jpg",
+            category: "Bouquets",
+            quantity: 0
+        }
+    ],
     total: 0
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import placeholder from '../../../assets/placeholder.png';
-const Product = () =>
+
+const Product = ({id, name, price}) =>
 {
     return (
         <div>
@@ -11,9 +12,9 @@ const Product = () =>
                 
                 <div className="text-center">
                     <a href="{{ url('shop', $product->slug) }}">
-                        <p className="display_product_name">Flower Name</p>
+                        <p className="display_product_name">{name}</p>
                     </a>
-                    <p className="display_product_price">CAD 10</p>
+                    <p className="display_product_price">CAD {price}</p>
                 </div>
             </div>
         </div>
