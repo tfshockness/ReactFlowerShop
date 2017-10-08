@@ -159,6 +159,15 @@ export const cart = {
             img: "7.jpg",
             category: "Bouquets",
             quantity: 2
+        },
+        {
+            id: 11,
+            name: "Richness",
+            description: "Beautiful flower",
+            price: 4500,
+            img: "11.jpg",
+            category: "Bouquets",
+            quantity: 0
         }
     ],
     total: 0

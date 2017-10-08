@@ -234,3 +234,6 @@ table.cartTotal-table tr{
     background-color: #f2f2f2;
     border-top: 2px black;
 }
+.none {
+    display: none;
+}

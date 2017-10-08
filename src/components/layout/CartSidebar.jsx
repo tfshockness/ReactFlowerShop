@@ -13,7 +13,7 @@ class CartSideBar extends Component
     render()
     {
         return (
-            <div className="row">
+            <div className="row none">
                 <div className="col-md-3 cart-sidebar">
                     <ul className="navbar-nav">
                         <li className="nav-item">
