@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProductTableRow = ({id, name, price, quantity}) => (
+const ProductTableRow = (props) => (
         <tr>
             <td>
                 <img 
@@ -9,7 +9,7 @@ const ProductTableRow = ({id, name, price, quantity}) => (
                     width="80" 
                 />
             </td>
-            <td>{name}</td>
+            <td>{props.name}</td>
             <td>
                 <input 
                     type="number" 
@@ -17,11 +17,12 @@ const ProductTableRow = ({id, name, price, quantity}) => (
                     min="1" 
                     max="100" 
                     step="1"
+                    value={props.quantity}
                 />
             </td>
-            <td>${price}</td>
+            <td>${props.price}</td>
             <td>
-                <button type="button" className="btn btn-outline-danger btn-sm btn-table-cancel">x</button>
+                <button type="button" className="btn btn-outline-danger btn-sm btn-table-cancel" onClick={props.delete} >x</button>
             </td>
         </tr>
 )

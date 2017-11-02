@@ -1,0 +1,8 @@
+
+export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
+export const ADD_TO_CART = 'ADD_TO_CART';
+
+export const GET_PRODUCT = 'GET_PRODUCT';
+export const DISPLAY_PRODUCT = 'DISPLAY_PRODUCT';
+export const GET_ALL_PRODUCTS = 'GET_ALL_PRODUCTS';
+export const GET_FLOWERS = 'GET_FLOWERS';

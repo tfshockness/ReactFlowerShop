@@ -7,6 +7,7 @@ import Categories from './components/shop/Categories';
 import CartSidebar from './components/layout/CartSidebar';
 import Cart from './components/shop/Cart';
 import NotFound from './components/NotFound';
+import showProduct from './components/shop/showProduct';
 
 const Routes = () => {
     return (
@@ -15,9 +16,10 @@ const Routes = () => {
                 <Nav />
                 <CartSidebar />
                 <Switch>
-                    <Route exact path="/" component={ Home } />
+                    <Route exact path="/" component={ Home }/>
                     <Route path="/categories" component={ Categories } />
                     <Route path="/cart" component={ Cart } />
+                    <Route path="/product/:product" component={showProduct} />
                     <Route component={ NotFound } />
                 </Switch>
                 <Footer />

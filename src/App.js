@@ -15,6 +15,6 @@ class App extends Component {
     );
   }
 }
-let state = Store.getState();
-console.log(state);
+console.log(Store.getState(), "App.js line 18");
+
 export default App;

@@ -1,155 +1,155 @@
-const db = firebase.initializeApp(config).database();
+// const db = firebase.initializeApp(config).database();
 
-//Set data to the database. Returns a Promisse with Void (nohting).
+// //Set data to the database. Returns a Promisse with Void (nohting).
 
-db.database().ref().set(defaultData).then(()=> console.log('Data is saved'));
+// db.database().ref().set(defaultData).then(()=> console.log('Data is saved'));
   
-//Remove a reference to the database. Returns a Promisse with Void.
-//ref() receives the node that should be remove/add/modify. cart/products/2 same as cart.products[2]
+// //Remove a reference to the database. Returns a Promisse with Void.
+// //ref() receives the node that should be remove/add/modify. cart/products/2 same as cart.products[2]
 
-db.database().ref("cart/products/2").remove().then(()=> console.log('Item was removed!'));
+// db.database().ref("cart/products/2").remove().then(()=> console.log('Item was removed!'));
 
-//Another way to remover is passing null to set for the same node.
-//ex db.database().ref("cart/products/2").set(null)
-//however, remover is made for remove. Use remove instead of set to remove.
+// //Another way to remover is passing null to set for the same node.
+// //ex db.database().ref("cart/products/2").set(null)
+// //however, remover is made for remove. Use remove instead of set to remove.
 
-//update receives a object that is going to be updated in the database. Its possible to add new data as well or delete, if something is set as null.
-//when ref() is empty, the root is return 
+// //update receives a object that is going to be updated in the database. Its possible to add new data as well or delete, if something is set as null.
+// //when ref() is empty, the root is return 
 
-db.database().ref("cart/products/2").update({
-    id: 6,
-    name: "Elegance",
-    description: "Beautiful flower",
-    price: 5000,
-    img: "6.jpg",
-    category: "Bouquets",
-    quantity: 1
-})
-
-
-db.database().ref("cart/products/0").update({
-    quantity:3
-})
-
-//Fetching Data from Database once.
-
-//Gettin from Root (All Data) only one time. Without subscribe to change.
-//once receive something that I could not understand
-//Return the data as promisse
-
-db.ref()
-.once('value')
-.then((data) => //to access the data, call the method val()
-{
-    const res = data.val();
-    console.log(res);
-})
-.catch((e) =>
-{
-    console.log('Something went wrong!');
-});
+// db.database().ref("cart/products/2").update({
+//     id: 6,
+//     name: "Elegance",
+//     description: "Beautiful flower",
+//     price: 5000,
+//     img: "6.jpg",
+//     category: "Bouquets",
+//     quantity: 1
+// })
 
 
-//To access a specific node, just change the ref as usual.
+// db.database().ref("cart/products/0").update({
+//     quantity:3
+// })
 
-db.ref("products/addons")
-.once('value')
-.then((data) => //to access the data, call the method val()
-{
-    const res = data.val();
-    console.log(res);
-})
-.catch((e) =>
-{
-    console.log('Something went wrong!');
-});
+// //Fetching Data from Database once.
 
+// //Gettin from Root (All Data) only one time. Without subscribe to change.
+// //once receive something that I could not understand
+// //Return the data as promisse
 
-//Fetching data from database always when data changes
-//DONT USE PROMISES HERE, BECAUSE YOU NEED TO GET DATA ALWAYS WHEN SOMETHING CHANGE
-//for that, is better use a callback function.
-//on() subscribe for changes.
-
-const onValueChange = db.ref().on('value', (data) => {
-    const res = data.val();
-    console.log(res);
-}, (e) => {
-    console.log('Error fetching the data', e);
-})
+// db.ref()
+// .once('value')
+// .then((data) => //to access the data, call the method val()
+// {
+//     const res = data.val();
+//     console.log(res);
+// })
+// .catch((e) =>
+// {
+//     console.log('Something went wrong!');
+// });
 
 
-const onCartChange = db.ref('cart').on('value', (data) => {
-    const res = data.val();
-    console.log(res);
-    console.log(res.products);
-}, (e)=> {
-    console.log('Error in fetch cart data');
-});
+// //To access a specific node, just change the ref as usual.
 
-//To cancel a subscription pass off() to the ref(). When is not needed to get data back.
-//off() remove all subscriptions. or you can cancel a single subscriptions, just pass the same function that was pass to on.
+// db.ref("products/addons")
+// .once('value')
+// .then((data) => //to access the data, call the method val()
+// {
+//     const res = data.val();
+//     console.log(res);
+// })
+// .catch((e) =>
+// {
+//     console.log('Something went wrong!');
+// });
 
-//ex:
 
-//db.ref().off(onValueChange);
+// //Fetching data from database always when data changes
+// //DONT USE PROMISES HERE, BECAUSE YOU NEED TO GET DATA ALWAYS WHEN SOMETHING CHANGE
+// //for that, is better use a callback function.
+// //on() subscribe for changes.
+
+// const onValueChange = db.ref().on('value', (data) => {
+//     const res = data.val();
+//     console.log(res);
+// }, (e) => {
+//     console.log('Error fetching the data', e);
+// })
 
 
-  //Push will create a radom id.
-  //Push receive a object as argument
-  //db.ref('products/cart').push()
+// const onCartChange = db.ref('cart').on('value', (data) => {
+//     const res = data.val();
+//     console.log(res);
+//     console.log(res.products);
+// }, (e)=> {
+//     console.log('Error in fetch cart data');
+// });
+
+// //To cancel a subscription pass off() to the ref(). When is not needed to get data back.
+// //off() remove all subscriptions. or you can cancel a single subscriptions, just pass the same function that was pass to on.
+
+// //ex:
+
+// //db.ref().off(onValueChange);
+
+
+//   //Push will create a radom id.
+//   //Push receive a object as argument
+//   //db.ref('products/cart').push()
 
 
   
-  db.ref().once('value')
-  .then((data)=> {
-      const res = data.val();
-      console.log(res);
-  });
-  
-  
-  const flowers = [];
-  //geting All flowers in a Array.
-  db.ref('products/flowers').once('value')
-  .then((data)=> {
-      data.forEach((flower) => {
-          flowers.push({
-              id: flower.key, //it will get the key generated by the push()
-              ...flower.val() //it will get all other values inside of the object flower
-          })
-      })
-  });
-  
-  console.log(flowers);
+//   db.ref().once('value')
+//   .then((data)=> {
+//       const res = data.val();
+//       console.log(res);
+//   });
   
   
-  //geting All addons and push to a array. using On()
-  //Array should be created inside of the function, otherwise, the function will push to the array all the data again
-  //This will duplicate the data in the array.
-  db.ref('products/addons').on('value', (data) => {
-      const addons = [];
-      data.forEach((addon) => {
-          addons.push({
-              id: addon.key,
-              ...addon.val()
-          })
-      })
-      console.log(addons);
-  });
+//   const flowers = [];
+//   //geting All flowers in a Array.
+//   db.ref('products/flowers').once('value')
+//   .then((data)=> {
+//       data.forEach((flower) => {
+//           flowers.push({
+//               id: flower.key, //it will get the key generated by the push()
+//               ...flower.val() //it will get all other values inside of the object flower
+//           })
+//       })
+//   });
   
-  //Listening to a different event in the database
-  //Child_removed
+//   console.log(flowers);
   
-  db.ref('products/addons').on('child_removed', (data) => {
-      console.log(data.key, data.val());
-  });
   
-  //Child_changed
+//   //geting All addons and push to a array. using On()
+//   //Array should be created inside of the function, otherwise, the function will push to the array all the data again
+//   //This will duplicate the data in the array.
+//   db.ref('products/addons').on('value', (data) => {
+//       const addons = [];
+//       data.forEach((addon) => {
+//           addons.push({
+//               id: addon.key,
+//               ...addon.val()
+//           })
+//       })
+//       console.log(addons);
+//   });
   
-  db.ref('products/addons').on('child_changed', (data) => {
-      console.log(data.key, data.val());
-  })
+//   //Listening to a different event in the database
+//   //Child_removed
+  
+//   db.ref('products/addons').on('child_removed', (data) => {
+//       console.log(data.key, data.val());
+//   });
+  
+//   //Child_changed
+  
+//   db.ref('products/addons').on('child_changed', (data) => {
+//       console.log(data.key, data.val());
+//   })
   
 
-  //Child_added - fire when a child was added.
-  //Child_added works different, I just dont know how. hahaha
-  //Change works for added and removed.
+//   //Child_added - fire when a child was added.
+//   //Child_added works different, I just dont know how. hahaha
+//   //Change works for added and removed.
